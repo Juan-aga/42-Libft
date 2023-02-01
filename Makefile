@@ -6,23 +6,29 @@
 #    By: juan-aga <juan_aga@student.42malaga.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 17:38:15 by juan-aga          #+#    #+#              #
-#    Updated: 2023/02/01 12:04:15 by juan-aga         ###   ########.fr        #
+#    Updated: 2023/02/01 13:25:20 by juan-aga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS 			=-I ./include
+HEADERS			=-I ./include
 
 NAME			= libft.a
 
-CC				= gcc ${FLAGS}
+CC				= gcc ${CFLAGS}
 
-FLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror
 
 ifdef DEBUG
-		FLAGS += -g
+		CFLAGS += -g
 endif
 
 REMOVE			= rm -f
+
+#		COLORS		#
+CYELLOW			=\033[1;33m
+CGREEN			=\033[0;32m
+CRED			=\033[0;91m
+CRESET			=\033[0m
 
 DIR_LFT			= ./src/src_libft
 
@@ -94,45 +100,32 @@ SRC_PUSHSWAP	= ft_issign.c			\
 				  ft_atoll.c			\
 				  ft_abs.c
 
-SRC				= $(addprefix ${DIR_LFT}/,${SRC_LFTI})		\
+SRC				= $(addprefix ${DIR_LFT}/,${SRC_LFT})		\
 				$(addprefix ${DIR_PF}/,${SRC_PF})			\
 				$(addprefix ${DIR_GNL}/,${SRC_GNL})			\
 				$(addprefix ${DIR_FRACTOL}/,${SRC_FRACTOL})	\
 				$(addprefix ${DIR_PUSHSWAP}/,${SRC_PUSHSWAP})
 
-OBJ_LFT			= $(addprefix ${DIR_LFT}/,${SRC_LFT:.c=.o})
-
-OBJ_PF			= $(addprefix ${DIR_PF}/,${SRC_PF:.c=.o})
-
-OBJ_GNL			= $(addprefix ${DIR_GNL}/,${SRC_GNL:.c=.o})
-
-OBJ_FRACTOL		= $(addprefix ${DIR_FRACTOL}/,${SRC_FRACTOL:.c=.o})
-
-OBJ_PUSHSWAP	= $(addprefix ${DIR_PUSHSWAP}/,${SRC_PUSHSWAP:.c=.o})
-
-OBJ				= ${OBJ_LFT}			\
-				${OBJ_PF}				\
-				${OBJ_GNL}				\
-				${OBJ_FRACTOL}			\
-				${OBJ_PUSHSWAP}
+OBJ				= ${SRC:.c=.o}
 
 %.o: %.c
-			@${CC} ${CFLAGS} -o $@ -c $< && printf "Compiling: $(notdir $<\n)"
+			@${CC} ${HEADERS} -o $@ -c $< && printf "${CGREEN}Compiling: ${CYELLOW}$(notdir $<\n)"
 
 all:		${NAME}
 
 ${NAME}:	${OBJ}
-			@echo "${NAME} objects files were created\n"
+			@echo "\n${CGREEN}${NAME} objects files were created\n"
 			@ar -rcs ${NAME} ${OBJ}
 			@echo "${NAME} was created\n"
+			@echo "Compiled with flags: ${CFLAGS}\n${CRESET}"
 		
 clean:		
 			@${REMOVE} ${OBJ}
-			@echo "${NAME} objects files were deleted\n"
+			@echo "${CRED}${NAME} objects files were deleted${CRESET}"
 
 fclean:		clean 
-			${REMOVE} ${NAME}
-			@echo "${NAME} was deleted\n"
+			@${REMOVE} ${NAME}
+			@echo "${CRED}${NAME} was deleted${CRESET}"
 
 re:			fclean ${NAME}
 
