@@ -2,13 +2,13 @@
 .DS_Store
 
 # C objects
-.o
+*.o
 
 # C libraries
-.lib
-.a
+*.lib
+*.a
 
 # Executables
-.out
-.app
-.hex
+*.out
+*.app
+*.hex
