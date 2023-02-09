@@ -6,7 +6,7 @@
 /*   By: juan-aga <juan-aga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:23:15 by juan-aga          #+#    #+#             */
-/*   Updated: 2022/11/16 18:00:31 by juan-aga         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:46:54 by franmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_putstr_pf(char *str, int *len)
 		*len = -1;
 	else
 	{
-		while (str[i] && !(len < 0))
+		while (str[i] && !(*len < 0))
 		{
 			ft_putchar_pf(str[i], len);
 			i++;
