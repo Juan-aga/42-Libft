@@ -6,13 +6,14 @@
 /*   By: juan-aga <juan_aga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 15:06:11 by juan-aga          #+#    #+#             */
-/*   Updated: 2022/09/30 17:01:33 by juan-aga         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:01:39 by juan-aga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include "memory_leaks.h"
 
 typedef struct s_list
 {

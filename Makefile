@@ -6,17 +6,21 @@
 #    By: juan-aga <juan_aga@student.42malaga.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 17:38:15 by juan-aga          #+#    #+#              #
-#    Updated: 2023/02/01 13:25:20 by juan-aga         ###   ########.fr        #
+#    Updated: 2023/03/06 12:58:28 by juan-aga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADERS			=-I ./include
+HEADERS			=-I ./include -I ${MEM_DIR}/include
 
 NAME			= libft.a
 
 CC				= gcc ${CFLAGS}
 
 CFLAGS			= -Wall -Wextra -Werror
+
+MEM_DIR			= ../memory-leaks
+
+LIBS			= ${MEM_DIR}/memory_leaks.a
 
 ifdef DEBUG
 		CFLAGS += -g
@@ -115,7 +119,7 @@ all:		${NAME}
 
 ${NAME}:	${OBJ}
 			@echo "\n${CGREEN}${NAME} objects files were created\n"
-			@ar -rcs ${NAME} ${OBJ}
+			@ar -rcs ${NAME} ${OBJ} ${LIBS}
 			@echo "${NAME} was created\n"
 			@echo "Compiled with flags: ${CFLAGS}\n${CRESET}"
 		

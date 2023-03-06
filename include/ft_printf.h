@@ -6,7 +6,7 @@
 /*   By: juan-aga <juan_aga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:59:31 by juan-aga          #+#    #+#             */
-/*   Updated: 2022/10/08 07:40:43 by juan-aga         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:00:28 by juan-aga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 # include "libft.h"
 # include <stdarg.h>
+# include "memory_leaks.h"
 
 int		ft_printf(char const *s, ...);
 /*

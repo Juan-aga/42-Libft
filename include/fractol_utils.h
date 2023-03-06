@@ -6,7 +6,7 @@
 /*   By: juan-aga <juan_aga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 00:41:22 by juan-aga          #+#    #+#             */
-/*   Updated: 2022/12/20 16:08:55 by juan-aga         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:00:07 by juan-aga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_UTILS_H
 
 # include "libft.h"
+# include "memory_leaks.h"
 
 /*			TEXT UTILS			*/
 /*

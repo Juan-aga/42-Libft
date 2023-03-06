@@ -6,7 +6,7 @@
 /*   By: juan-aga <juan_aga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:35:35 by juan-aga          #+#    #+#             */
-/*   Updated: 2022/10/11 11:03:38 by juan-aga         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:01:11 by juan-aga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "memory_leaks.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
