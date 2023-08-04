@@ -6,7 +6,7 @@
 /*   By: juan-aga <juan_aga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:58:28 by juan-aga          #+#    #+#             */
-/*   Updated: 2022/12/21 08:39:38 by juan-aga         ###   ########.fr       */
+/*   Updated: 2023/08/04 14:18:10 by juan-aga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ double	ft_atof(char *str)
 	double	rest;
 	char	*tmp;
 	int		i;
+	int		last;
 
 	num = ft_atoi(str);
 	tmp = ft_strchr(str, '.');
@@ -27,7 +28,10 @@ double	ft_atof(char *str)
 		return (num);
 	rest = ft_atoi(&tmp[1]);
 	i = 1;
-	while (tmp[i])
+	last = ft_strlen(&tmp[1]);
+	while (last > 0 && tmp[last] == '0')
+		last--;
+	while (i <= last)
 	{
 		rest /= 10;
 		i++;
